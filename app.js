@@ -1,8 +1,5 @@
 // Main Javascript file which handles initialization, actions, and UI
 
-// Init UI
-const ui = new UI();
-
 // Init Storage
 const storage = new Storage();
 const http = new EasyHTTP();
@@ -24,8 +21,7 @@ getAuth.addEventListener('click', function () {
   const interaction = http
     .get('https://api.sharpen.cx/v1/auth/token', encodedAuth)
     .then((data) => storage.setAuthData(data.token))
-    //.catch((err) => console.log(err));
-    .catch((err) => ui.showError(err));
+    .catch((err) => console.log(err));
 
   // Close modal
   $('#authModal').modal('hide');
@@ -46,5 +42,5 @@ postDial.addEventListener('click', function () {
   const interaction = http
     .post('https://api.sharpen.cx/v1/interactions/dial', dialData, auth.auth)
     .then((data) => console.log(data))
-    .catch((err) => ui.showError(err));
+    .catch((err) => console.log(err));
 });
