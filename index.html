@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://bootswatch.com/4/cerulean/bootstrap.min.css"
+    />
+    <title>Sharpen API Proof of Concept</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Sharpen API Proof of Concept</h1>
+      <div id="form">
+        <fieldset>
+        <hr>
+          <button
+            type="button"
+            class="btn btn-primary"
+            data-toggle="modal"
+            data-target="#authModal"
+            >
+            Log In
+          </button>
+        <hr>
+        <div class="form-group">
+          <h5 id="dialLabel">Enter Dial Information:</h5>
+        </div>
+
+        <div class="form-group">
+          <label for="toNumber">To Number:</label>
+          <input type="text" class="form-control" id="toNumber" aria-describedby="toNumber" placeholder="Number to Dial">
+          <small id="toNumber" class="form-text text-muted">Enter the number you would like to dial (10 digit format).</small>
+        </div>
+
+        <div class="form-group">
+          <label for="fromNumber">From Number:</label>
+          <input type="text" class="form-control" id="fromNumber" aria-describedby="fromNumber" placeholder="Dial From Number">
+          <small id="fromNumber" class="form-text text-muted">Enter the number you are dialing from (10 digit format, and must be a Sharpen Number).</small>
+        </div>
+
+        <button type="submit" value="Dial" id="post-dial" class="btn btn-primary">Place Call</button>
+      </fieldset>
+    </div>
+    
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="authModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="authModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="authModalLabel">Enter Username and Password:</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form id="auth-form">
+              <div class="form-group">
+                <label for="Username">Username</label>
+                <input type="text" id="username" class="form-control" />
+              </div>
+              <div class="form-group">
+                <label for="Password">Password</label>
+                <input type="password" id="password" class="form-control" />
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button id="get-auth" type="button" class="btn btn-primary">
+              Log In
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+      integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="storage.js"></script>
+    <script src="ui.js"></script>
+    <script src="sharpenhttp.js"></script>
+    <script src="app.js"></script>
+    
+  </body>
+</html>
