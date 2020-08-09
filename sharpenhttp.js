@@ -26,6 +26,7 @@ class EasyHTTP {
       body: JSON.stringify(data),
       json: true,
     });
+
     const resData = await response.json();
     return resData;
   }

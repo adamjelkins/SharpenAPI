@@ -16,6 +16,7 @@ getAuth.addEventListener('click', function () {
   const username = document.getElementById('username').value;
   const password = document.getElementById('password').value;
   const encodedAuth = btoa(`${username}:${password}`);
+  console.log(encodedAuth);
 
   // Use encoded auth to authenticate, then set Auth data in local storage
   const interaction = http
